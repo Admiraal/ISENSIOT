@@ -14,14 +14,14 @@ Er zijn 2 klassen en 1 interface betrokken bij het uitlezen van een sensor.
 
 
 - ##### SensorManager Klasse:
-In de constructor opvragen van de SystemService met de volgende regel code:
+In de constructor van de activity opvragen van de SystemService met de volgende regel code:
 ```java
 this.sensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
 ```
 
 
 - ##### Sensor Klasse:
-In de onResume Sensor klasse declareren met de volgende regel code:
+In de onResume() callback methode de Sensor klasse declareren met de volgende regel code:
 ```java
 this.sensor = this.sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
 ```
@@ -76,13 +76,6 @@ public void onPause(){
 ```
 
 
-
-### Graph library
-In het project is gebruik gemaakt van de library MPAndroidChart van Phil Jay. 
-Link: [https://github.com/PhilJay/MPAndroidChart](https://github.com/PhilJay/MPAndroidChart "https://github.com/PhilJay/MPAndroidChart")
-
-
-
 #### MainActivity:
 ![De MainActivity](https://i.postimg.cc/G9Lc7b38/main-Activity.png "De MainActivity")
 
@@ -95,3 +88,15 @@ Link: [https://github.com/PhilJay/MPAndroidChart](https://github.com/PhilJay/MPA
 Om het lijndiagram te beïnvloeden open je in de android emulator op "Extended Controls" > "Virtual Sensors" > open dan het tabblad "Additional sensors" om de luxmeter te beïnvloeden. De lijndiagram in de GraphActivity toont de nieuwe (lux)waarden.
 
 ![Additional Sensors](https://i.postimg.cc/64ptyfbL/additional-sensors.png "Additional Sensors")
+
+
+### Graph library
+Dit project maakt gebruik van de library MPAndroidChart van Phil Jay. 
+Link: [https://github.com/PhilJay/MPAndroidChart](https://github.com/PhilJay/MPAndroidChart "https://github.com/PhilJay/MPAndroidChart")
+
+Toevoegen van deze library aan je project:
+Voeg dit toe aan repositories binnen dependencyResolutionManagement in het settings.gradle bestand: 
+- maven { url 'https://jitpack.io' }
+
+Voeg dit toe aan de dependencies in build.gradle (module):
+- implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
