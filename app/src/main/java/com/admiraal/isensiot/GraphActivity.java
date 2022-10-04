@@ -132,8 +132,8 @@ public class GraphActivity extends AppCompatActivity implements SensorEventListe
 
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
-        float sensorValue = sensorEvent.values[0];
-        this.measureAmount += 1;
+        float sensorValue = sensorEvent.values[0];      // nieuwe waarde x-as
+        this.measureAmount += 1;                        // ophogen zodat de x-as een plaats opschuift
         this.lineDataSet.addEntry(new Entry(measureAmount, sensorValue));
         this.sensorChart.notifyDataSetChanged();
         this.sensorChart.invalidate();
