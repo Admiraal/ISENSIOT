@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Description;
@@ -20,6 +21,7 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 
+import java.time.Duration;
 import java.util.ArrayList;
 
 public class GraphActivity extends AppCompatActivity implements SensorEventListener {
@@ -30,7 +32,7 @@ public class GraphActivity extends AppCompatActivity implements SensorEventListe
     private LineChart sensorChart;
     private ArrayList<ILineDataSet> dataSets;
     private LineDataSet lineDataSet;
-    private int measureAmount = 1;
+    private int measureAmount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,7 +101,8 @@ public class GraphActivity extends AppCompatActivity implements SensorEventListe
         sensorChart.getLegend().setEnabled(false);
         sensorChart.getDescription().setEnabled(true);
         Description description = new Description();
-        description.setText("Data");
+        String descriptionTxt = getResources().getString(R.string.sensorGraphData);
+        description.setText(descriptionTxt);
         description.setTextSize(15f);
         sensorChart.setDescription(description);
     }
@@ -120,14 +123,15 @@ public class GraphActivity extends AppCompatActivity implements SensorEventListe
         if(sensor != null){
             sensorManager.registerListener(this, sensor, sensorManager.SENSOR_DELAY_FASTEST);
         } else {
-            // do something
+            String inaccurateDataMessage = getResources().getString(R.string.sensorNotAvailable);
+            Toast toast = Toast.makeText(this, inaccurateDataMessage, Toast.LENGTH_SHORT);
+            toast.show();
         }
     }
 
 
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
-
         float sensorValue = sensorEvent.values[0];
         this.measureAmount += 1;
         this.lineDataSet.addEntry(new Entry(measureAmount, sensorValue));
@@ -138,7 +142,9 @@ public class GraphActivity extends AppCompatActivity implements SensorEventListe
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int i) {
-
+        String inaccurateDataMessage = getResources().getString(R.string.sensorGraphData);
+        Toast toast = Toast.makeText(this, inaccurateDataMessage, Toast.LENGTH_SHORT);
+        toast.show();
     }
 
 

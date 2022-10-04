@@ -4,12 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
     tools:context=".GraphActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp">
 
@@ -17,23 +21,31 @@
             android:id="@+id/message"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Lux per measurement unit" />
+            android:layout_marginTop="10dp"
+            android:text="@string/graphTitle" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/graphInstructions" />
 
         <com.github.mikephil.charting.charts.LineChart
             android:id="@+id/sensorDataChart"
             android:layout_width="match_parent"
             android:layout_height="230dp"
             android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="16dp"
-            android:layout_marginTop="8dp"
             android:background="@color/white"
-            android:elevation="10dp"
-            />
+            android:elevation="10dp" />
 
         <Button
             android:id="@+id/closeBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Close" />
+            android:layout_marginTop="10dp"
+            android:text="@string/goBack" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Isensiot</string>
+    <string name="welcome">Welcome, click below to navigate to the graph!</string>
+    <string name="gotoGraphBtn">Go to Graph</string>
+    <string name="goBack">Go back</string>
+    <string name="graphTitle">Lux per measurement unit</string>
+    <string name="graphInstructions">1. Open extended controls on the emulator \n2. Click on Virtual Sensors, then additional sensors \n3. Move the lux sensor a few times</string>
+
+    <string name="sensorGraphData">Lux/ measurement</string>
+    <string name="sensorDataInaccurate">Sensordata inaccurate</string>
+    <string name="sensorNotAvailable">Sensor not available</string>
+
 </resources>
