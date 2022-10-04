@@ -1,26 +1,32 @@
 # Android project ISENSIOT
 
 ### Over het project
-Dit project is ter ondersteuning van de Android lessen ten behoeve van de minor Sensor Technologie aan Hogeschool Leiden.
+Dit project is ter ondersteuning van de Android lessen ten behoeve van de minor Sensor Technologie aan Hogeschool Leiden. 
+In dit project maken we een android app met twee schermen:
+- MainActivity: Een scherm met een knop naar het volgende scherm. 
+- GraphActivity: Een scherm met een grafiek die wijzigt zodra de waarde van de lichtsensor wijzigt
 
+
+------------
 
 ### Het uitlezen van sensoren in Android
 Er zijn 2 klassen en 1 interface betrokken bij het uitlezen van een sensor.
-Klassen: 
-##### Sensor Klasse
-In de onResume Sensor klasse declareren met de volgende regel code:
-```java
-this.sensor = this.sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
-```
 
-##### SensorManager Klasse
-In de constructor opvragen met de volgende regel code:
+
+- ##### SensorManager Klasse:
+In de constructor opvragen van de SystemService met de volgende regel code:
 ```java
 this.sensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
 ```
 
 
-##### SensorEventManager interface
+- ##### Sensor Klasse:
+In de onResume Sensor klasse declareren met de volgende regel code:
+```java
+this.sensor = this.sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
+```
+
+- ##### SensorEventManager interface:
 Implementeer de SensorEventManager interface. Deze zorgt ervoor dat de activity gereed is om wijzigingen van de sensor waarde te ontvangen. Deze interface zorgt voor het implementeren van de volgende methoden:
 ```java
 @Override
