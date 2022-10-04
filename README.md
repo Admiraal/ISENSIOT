@@ -77,17 +77,17 @@ public void onPause(){
 
 
 #### MainActivity:
-![De MainActivity](https://i.postimg.cc/G9Lc7b38/main-Activity.png "De MainActivity")
+![De MainActivity](https://i.postimg.cc/7P7fLLpV/main-Activity.png "De MainActivity")
 
 #### GraphActivity:
-![De GraphActivity](https://i.postimg.cc/K40mCC49/graph-Activity.png "De GraphActivity")
+![De GraphActivity](https://i.postimg.cc/jdbCnbTr/graph-Activity.png "De GraphActivity")
 
 
 ------------
 #### Additional Sensors
 Om het lijndiagram te beïnvloeden open je in de android emulator op "Extended Controls" > "Virtual Sensors" > open dan het tabblad "Additional sensors" om de luxmeter te beïnvloeden. De lijndiagram in de GraphActivity toont de nieuwe (lux)waarden.
 
-![Additional Sensors](https://i.postimg.cc/64ptyfbL/additional-sensors.png "Additional Sensors")
+![Additional Sensors](https://i.postimg.cc/MHyT3sy4/additional-sensors.png "Additional Sensors")
 
 
 ### Graph library
